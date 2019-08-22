@@ -24,7 +24,10 @@ let funcLen=functionArray.length;
 		return}
 	else{
 		new Promise(functionArray[i]).then(
-			result => functionCallBack(n,++i)
+			result => functionCallBack(n,++i),
+			reject=>{
+				alert("Something wrong happened");
+			}
 		);
 	}
 })(funcLen,index);
