@@ -2,6 +2,7 @@ function function1(resolve,reject){
 setTimeout(() => {
 alert("fis");
 resolve("done");
+//reject("something wrong");
 } , 3000);
 }
 function function2(resolve,reject){
