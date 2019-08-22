@@ -1,17 +1,17 @@
 function function1(resolve,reject){
 setTimeout(() => {
-alert("fis");
-resolve("done");
-//reject("something wrong");
+console.log("first");
+//resolve("done");
+reject("something wrong");
 } , 3000);
 }
 function function2(resolve,reject){
 setTimeout(() => {
-alert("sec");resolve("done")}, 3000);
+console.log("second");resolve("done")}, 3000);
 }
 function function3(resolve,reject){
 setTimeout(() => {
-alert("thir");resolve("done")}, 3000);
+console.log("third");resolve("done")}, 3000);
 }
 
 let functionArray=[function1,function2,function3];
@@ -24,10 +24,12 @@ let funcLen=functionArray.length;
 		return}
 	else{
 		new Promise(functionArray[i]).then(
-			result => functionCallBack(n,++i),
+			result => {
+				console.log(result);
+				functionCallBack(n,++i);},
 			reject=>{
-				alert("Something wrong happened");
-			}
+				console.log(reject);
+				functionCallBack(n,++i);}
 		);
 	}
 })(funcLen,index);
