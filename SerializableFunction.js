@@ -24,11 +24,7 @@ let funcLen=functionArray.length;
 		return}
 	else{
 		new Promise(functionArray[i]).then(
-			result => functionCallBack(n,++i),
-			reject=>{
-				alert("Something wrong happened");
-				//Do Something like functionCallBack(n,i) if you want it to be resolved first
-			}
+			result => functionCallBack(n,++i)
 		);
 	}
 })(funcLen,index);
