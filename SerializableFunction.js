@@ -27,6 +27,7 @@ let funcLen=functionArray.length;
 			reject=>{
 				alert("Something wrong happened");
 				//Do Something like functionCallBack(n,i) if you want it to be resolved first
+			}
 		);
 	}
 })(funcLen,index);
